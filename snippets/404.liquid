@@ -1,0 +1,14 @@
+{% capture title404Translation %}{{ 'general.404.title' | t }}{% endcapture %}
+
+<div class="page-width">
+    {% if title404Translation contains "translation missing" %}
+        <h1 class="title title--primary">Page not found</h1>
+        <p class="subtitle">Sorry we couldn't find this page.</p>
+        {% render 'missing-translation' %}
+    {% endif %}
+    
+    {% unless title404Translation contains "translation missing" %}
+        <h1 class="title title--primary">{{ 'general.404.title' | t }}</h1>
+        <p class="subtitle">{{ 'general.404.subtitle' | t }}</p>
+    {% endunless %}
+</div>
