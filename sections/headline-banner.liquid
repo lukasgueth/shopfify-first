@@ -1,0 +1,46 @@
+<style>
+    section {
+        height: 500px;
+    }
+
+    h1#animated-headline {
+        transition: .5s;
+    }
+
+    .text-zoom {
+        transform: scale(1.2);
+    }
+</style>
+
+<h1 id="animated-headline">{{ section.settings.headline }}</h1>   
+
+{% schema %}
+    {
+        "name": "Ja",
+        "tag": "section", 
+        "class": "grid align-center", 
+        "settings": [
+            {
+                "type": "text",
+                "id": "headline", 
+                "label": "Headline"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Welcome section Test"
+            }
+        ]
+    }
+{% endschema %}
+
+<script>
+    const headline = document.getElementById('animated-headline');
+    setInterval(() => {
+        if (headline.classList.contains("text-zoom")) {
+            headline.classList.remove("text-zoom");
+        } else {
+            headline.classList.add("text-zoom");
+        }
+    }, 500);
+</script>

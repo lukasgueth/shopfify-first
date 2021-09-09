@@ -93,6 +93,9 @@
         "column2",
         "column3"
       ]
+    },
+    "headline-banner": {
+      "type": "div"
     }
   },
   "order": [
